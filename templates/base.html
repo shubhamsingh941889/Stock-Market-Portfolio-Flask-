@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script type="text/javascript" src="../static/js/script.js" defer></script>
+    <!-- <script type="text/javascript", src="{{ url_for('static', filename='js/script.js') }}" defer></script> -->
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <title>Finnhub Stcok</title>
+    
+</head>
+<body>
+            <p class="stock-name">Stock Search</p>
+            <div class="search-area">
+            <form class = "search-form" action="" onsubmit="searchapi(event)">
+                <button class = "search-button" type="submit" id="glass-btn">
+                    <img src="../static/img/search-solid.svg" alt="glass icon">
+                </button>
+                <input type="text" placeholder="Enter Stock Ticker Symbol" id="search-area" autocomplete="off" required />
+                <div class="vl"></div>
+                <button id = "cross-btn" type="reset">
+                    <img src="../static/img/times-solid.svg" alt="cross icon">
+                </button>
+                    
+                </form>
+                </div>
+        
+            
+                <div id="no-result">
+                    <div id="error-text">Error : No record has been found, please enter a valid symbol</div>
+                </div>
+                <div id="valid-result">
+                    <div class="nav-tab">
+                        <button class="nav-links active" onclick="nav_open_tab(event, 'company-data')">Company</button>
+                        <button class="nav-links" onclick="nav_open_tab(event, 'summary-data')">Stock Summary</button>
+                        <button class="nav-links" onclick="nav_open_tab(event, 'charts-data')">Charts</button>
+                        <button class="nav-links" onclick="nav_open_tab(event, 'news-data')">Latest News</button>
+                    </div>
+
+                    <div id="company-data" class="nav-returned-data">
+                    </div>
+
+
+                    <div id="summary-data" class="nav-returned-data">
+                    </div>
+
+                    <div id="charts-data" class="nav-returned-data">
+                        <div id="charts-area"></div>
+                    </div>
+
+                    <div id="news-data" class="nav-returned-data">
+                    </div>
+
+                </div>
+   
+</body>
+</html> 
